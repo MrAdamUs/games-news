@@ -2,6 +2,7 @@ const initState = {
   populer: [],
   newGames: [],
   upcoming: [],
+  searched: [],
 };
 
 const gamesReducer = (state = initState, action) => {
@@ -12,6 +13,11 @@ const gamesReducer = (state = initState, action) => {
         populer: action.payload.populer,
         upcoming: action.payload.upcoming,
         newGames: action.payload.newGames,
+      };
+    case 'FETCh_SEARCHED':
+      return {
+        ...state,
+        searched: action.payload.searched,
       };
     default:
       return { ...state };
